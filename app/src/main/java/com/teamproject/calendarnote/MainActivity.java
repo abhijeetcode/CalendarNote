@@ -105,6 +105,7 @@ public class MainActivity extends Activity
                 mCallApiButton.setEnabled(false);
                 mOutputText.setText("");
                 //Main_function
+                activityLayout.removeView(listView);
                 getResultsFromApi();
                 mCallApiButton.setEnabled(true);
             }
@@ -390,7 +391,7 @@ public class MainActivity extends Activity
          * @return List of Strings describing returned events.
          * @throws IOException
          */
-        
+
         private List<String> getDataFromApi() throws IOException {
             // List the next 10 events from the primary calendar.
             DateTime now = new DateTime(System.currentTimeMillis());
